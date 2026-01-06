@@ -104,9 +104,9 @@ plt.close("all")
 fig, ax = plt.subplots(figsize=(15, 6))
 
 bar_width = (
-    np.min(np.diff(station_positions)) * 0.25 
+    np.min(np.diff(station_positions))
     if len(station_positions) > 1
-    else 0.15
+    else 0.25
 
 )
 
