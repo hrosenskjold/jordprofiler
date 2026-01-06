@@ -103,11 +103,10 @@ terrain_y = terrain_y[mask_terrain]
 plt.close("all")
 fig, ax = plt.subplots(figsize=(15, 6))
 
-if len(station_positions) > 1:
-    min_spacing = np.min(np.diff(np.sort(station_positions)))
-    bar_width = min_spacing * 0.6
-else:
-    bar_width = 0.15
+bar_width = (
+    np.min(np.diff(station_positions)) * 0.25 
+    if len(station_positions) > 1
+    else 0.15
 
 )
 
